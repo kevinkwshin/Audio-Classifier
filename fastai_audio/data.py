@@ -84,8 +84,8 @@ class AudioItemList(ItemList):
 
     def get(self, i):
         fn = super().get(i)
-#         return open_audio(self.path/fn, using_librosa=self.using_librosa, downsampling=self.downsampling)
-        return open_audio(self.path, using_librosa=self.using_librosa, downsampling=self.downsampling)
+        return open_audio(self.path/fn, using_librosa=self.using_librosa, downsampling=self.downsampling)
+#         return open_audio(self.path, using_librosa=self.using_librosa, downsampling=self.downsampling)
 
 
     @classmethod
