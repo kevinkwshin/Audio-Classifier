@@ -19,7 +19,7 @@ class AudioDataBunch(DataBunch):
     def create(cls, train_ds, valid_ds, 
                tfms:Optional[Collection[Callable]]=None, # There is a bug in LabelLists because dl_tfms is not given to dataloader
                **kwargs)->'AudioDataBunch':
-        db = super().create(train_ds=train_ds, valid_ds=valid_ds, dl_tfms=tfms, **kwargs)
+        db = super().create(train_ds=train_ds, valid_ds=valid_ds, tfms=tfms, **kwargs)
 
         return db
 
@@ -84,7 +84,8 @@ class AudioItemList(ItemList):
 
     def get(self, i):
         fn = super().get(i)
-        return open_audio(self.path/fn, using_librosa=self.using_librosa, downsampling=self.downsampling)
+#         return open_audio(self.path/fn, using_librosa=self.using_librosa, downsampling=self.downsampling)
+        return open_audio(self.path, using_librosa=self.using_librosa, downsampling=self.downsampling)
 
 
     @classmethod
