@@ -19,7 +19,7 @@ class AudioDataBunch(DataBunch):
     def create(cls, train_ds, valid_ds, 
                dl_tfms:Optional[Collection[Callable]]=None, # There is a bug in LabelLists because dl_tfms is not given to dataloader
                **kwargs)->'AudioDataBunch':
-        db = super().create(train_ds=train_ds, valid_ds=valid_ds, dl_tfms=tfms, **kwargs)
+        db = super().create(train_ds=train_ds, valid_ds=valid_ds, dl_tfms=dl_tfms, **kwargs)
 
         return db
 
