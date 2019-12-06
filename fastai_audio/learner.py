@@ -66,7 +66,8 @@ def my_cl_int_plot_top_losses(self, k, largest=True, figsize=(25,7), heatmap:boo
 
         im = Image(x_consolidated[0, :, :, :].cpu()) # Extract the processed image from the prediction (after dl_tfms) and keep it into CPU
         cl = int(cl)
-        title = f'{classes[self.pred_class[idx]]}/{classes[cl]} / {self.losses[idx]:.2f} / {self.probs[idx][cl]:.2f}'
+#         title = f'{classes[self.pred_class[idx]]}/{classes[cl]} / {self.losses[idx]:.2f} / {self.probs[idx][cl]:.2f}'
+        title = f'{classes[self.pred_class[idx]]}/{classes[cl]} / {self.losses[idx]:.2f}'
         title = title + f'\n {audio.fn}'
         
         im.show(ax=axes.flat[i], title=title)
